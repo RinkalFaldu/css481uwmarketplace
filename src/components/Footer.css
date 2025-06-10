@@ -1,0 +1,11 @@
+/* Footer CSS */
+ 
+footer {
+    background-color: #9333ea;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+}

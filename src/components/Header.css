@@ -1,0 +1,207 @@
+/* Header styles 
+  -File: Header.css
+  
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+} 
+
+/* Header styles */
+.header {
+  width: 100%;
+}
+
+/* Top navigation bar */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Search bar */
+.search-container {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 16px;
+}
+
+.search-container form {
+  width: 100%;
+  position: relative;
+  
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 16px;
+  padding-right: 40px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 9999px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  color: #6b7280;
+}
+
+/* Action buttons (e.g., sell, login, signup)*/
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sell-button {
+  background-color: #9333ea;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sell-button:hover {
+  background-color: #7e22ce;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login-button {
+  background-color: #9333ea;
+  color: white;
+  border: none;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #7e22ce;
+}
+
+.signup-button {
+  background-color: white;
+  color: black;
+  border: 1px solid #d1d5db;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* User profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-icon {
+  background-color: black;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.user-svg {
+  color: white;
+}
+
+.username {
+  font-size: 14px;
+}
+
+/* Navigation menu */
+.main-nav {
+  background-color: #9333ea;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.nav-item {
+  padding: 4px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #7e22ce;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .search-container {
+    margin: 12px 0;
+    max-width: 100%;
+  }
+  
+  .action-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+  }
+}
+
+.nav-menu .nav-item a {
+  text-decoration: none;
+  color: inherit;
+}
+

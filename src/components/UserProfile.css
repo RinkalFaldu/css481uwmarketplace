@@ -1,0 +1,66 @@
+/* File: UserProfile.css 
+   Description: CSS file for the UserProfile page
+  Contains CSS styling for the UserProfile page
+
+*/
+
+
+/* Container for the entire user profile */
+.user-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Left section: Avatar, name, and form */
+  .profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Profile picture styling - made smaller */
+  .profile-pic {
+    width: 100px;        /* Adjust width for smaller size */
+    height: 100px;       /* Adjust height for smaller size */
+    border-radius: 50%;  /* Makes the image circular */
+    object-fit: cover;   /* Maintains aspect ratio */
+    margin-bottom: 10px;
+  }
+  
+  /* Profile name styling */
+  .profile-name {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  /* Form styling for updating profile picture */
+  .profile-left form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Input field styling */
+  .profile-left input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  /* Button styling */
+  .profile-left button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Button disabled state styling */
+  .profile-left button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

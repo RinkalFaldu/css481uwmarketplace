@@ -1,0 +1,51 @@
+/* File: ProductInfo.css 
+    Description: CSS file for the ProductInfo page
+    Contains CSS styling for the ProductInfo page 
+    this Style page applies  when user clicks on a product to view more details
+  */
+
+
+.productInfo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px; 
+  }
+
+.productImage-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    display: block;
+  }
+
+  .detail-container {
+    font-size: 30px;
+    margin: 50px;
+  }
+
+  button {
+    background-color: #9333ea;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
