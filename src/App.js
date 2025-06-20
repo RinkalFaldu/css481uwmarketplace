@@ -1,19 +1,5 @@
-/*
- * File: App.js
- * Description: This component renders the main App component of the application.
- *              The App js is the main component that renders the header, footer, and routes to different pages.
- *             The App js uses the BrowserRouter to navigate between different pages.  
- *            
- * Methods:
- * - App(): This function returns the main App component and routes different pages of this application.
- *      
- * @author 
- * @version 1.0
- * @since 2025-02-25
- */
-
 import React from "react";
-import {BrowserRouter as  Router, Routes, Route, Navigate} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
@@ -27,39 +13,49 @@ import Bags from "./pages/Bags";
 import LabEquipment from "./pages/LabEquipment";
 import Home from "./pages/Home";
 import ProductInfo from "./pages/ProductInfo";
-
-
-import "./App.css"
 import SellItemPage from "./pages/SellItemPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ItemPostedPage from "./pages/ItemPostedPage";
+import PrivateRoute from "./components/PrivateRoute";
+import "./App.css";
 
+function AppContent() {
+  const location = useLocation();
+  // Hide header/footer on login and register pages
+  const hideHeaderFooter = location.pathname === "/login" || location.pathname === "/register";
+
+  return (
+    <>
+      {!hideHeaderFooter && <Header />}
+      <Routes>
+        {/* Redirect root to login */}
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Protected routes */}
+        <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
+        <Route path="/ContactSellerPage" element={<PrivateRoute><ContactSellerPage /></PrivateRoute>} />
+        <Route path="/Books" element={<PrivateRoute><Books /></PrivateRoute>} />
+        <Route path="/Furniture" element={<PrivateRoute><Furniture /></PrivateRoute>} />
+        <Route path="/Electronics" element={<PrivateRoute><Electronics /></PrivateRoute>} />
+        <Route path="/Stationery" element={<PrivateRoute><Stationery /></PrivateRoute>} />
+        <Route path="/Bags" element={<PrivateRoute><Bags /></PrivateRoute>} />
+        <Route path="/LabEquipment" element={<PrivateRoute><LabEquipment /></PrivateRoute>} />
+        <Route path="/SellItemPage" element={<PrivateRoute><SellItemPage /></PrivateRoute>} />
+        <Route path="/UserProfilePage" element={<PrivateRoute><UserProfilePage /></PrivateRoute>} />
+        <Route path="/ProductInfo/:name" element={<PrivateRoute><ProductInfo /></PrivateRoute>} />
+        <Route path="/SellItemPage/ItemPostedPage" element={<PrivateRoute><ItemPostedPage /></PrivateRoute>} />
+      </Routes>
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+}
 
 function App() {
   return (
-    
     <Router>
-        <Header />
-    
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/Login" element={<Login/>}/>
-          <Route path="/Register" element={<Register/>}/>
-          <Route path="/ContactSellerPage" element={<ContactSellerPage/>}/>
-          <Route path="/Books" element={<Books/>}/>
-          <Route path="/Furniture" element={<Furniture/>}/>
-          <Route path="/Electronics" element={<Electronics/>}/>
-          <Route path="/Stationery" element={<Stationery/>}/>
-          <Route path="/Bags" element={<Bags/>}/>
-          <Route path="/LabEquipment" element={<LabEquipment/>}/>
-          <Route path="/SellItemPage" element={<SellItemPage/>}/>
-          <Route path="/UserProfilePage" element={<UserProfilePage/>}/>
-          <Route path="/ProductInfo/:name" element={<ProductInfo/>}/>
-          <Route path="/SellItemPage/ItemPostedPage" element={<ItemPostedPage/>}/>
-        </Routes>
-  
-      <Footer />
-  
+      <AppContent />
     </Router>
   );
 }

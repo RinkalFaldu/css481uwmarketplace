@@ -45,7 +45,7 @@ function Login(){
                 alert(`Login Successful: Welcome back ${username}`);
 
                 // redirect to home page
-                navigate('/'); 
+                navigate('/home'); 
             }            
         }catch (err){
             if (err.code === "auth/invalid-credential") {
@@ -103,7 +103,7 @@ function Login(){
                     </form>
                     
                     <p className="register-link-container">
-                        Don't have an account? <Link to = "/Register" className="register-link">Sign up</Link>
+                        Don't have an account? <Link to = "/register" className="register-link">Sign up</Link>
                     </p>
                 </div>
             </div>
